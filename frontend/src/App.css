@@ -1,12 +1,10 @@
 /* frontend/src/App.css */
 
 :root {
-  --color-black: #000000;
-  --color-dark-grey: #222222;
-  --color-primary-accent: #1DCD9F;
-  --color-secondary-accent: #169976;
-  --color-light-grey: #f0f0f0;
-  --color-white: #ffffff;
+  --color-darkest-blue: #06283D;
+  --color-medium-blue: #1363DF;
+  --color-lighter-blue: #47B5FF;
+  --color-lightest-blue: #DFF6FF;
 }
 
 /* Universal box-sizing for easier layout management */
@@ -18,18 +16,18 @@ body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0; 
-  background-color: var(--color-dark-grey); 
+  background-color: var(--color-darkest-blue); 
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align to top, content will scroll */
   min-height: 100vh;
-  color: var(--color-light-grey);
+  color: var(--color-lightest-blue);
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
-  background-color: var(--color-black); 
+  background-color: var(--color-darkest-blue); 
   padding: 60px 40px; /* More vertical padding */
   border-radius: 0; 
   box-shadow: none; 
@@ -46,7 +44,7 @@ body {
 }
 
 h1 {
-  color: var(--color-primary-accent); 
+  color: var(--color-medium-blue); 
   margin-bottom: 50px; /* More space below heading */
   font-size: 3.5em; /* Even larger heading */
   font-weight: 700;
@@ -61,7 +59,7 @@ h1 {
   margin-bottom: 40px; /* More space between sections */
   padding: 30px; /* More padding */
   border-radius: 10px; /* Slightly larger border-radius */
-  background-color: var(--color-dark-grey); 
+  background-color: var(--color-darkest-blue); 
   box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.4); /* Deeper inset shadow */
   width: 100%; /* Ensure sections take full width of container */
   max-width: 700px; /* Wider internal sections */
@@ -76,7 +74,7 @@ h1 {
 }
 
 .drop-zone {
-  border: 2px dashed var(--color-primary-accent); /* Dashed border for drop zone */
+  border: 2px dashed var(--color-medium-blue); /* Dashed border for drop zone */
   border-radius: 8px;
   padding: 30px;
   text-align: center;
@@ -93,13 +91,13 @@ h1 {
 }
 
 .drop-zone.dragging {
-  background-color: rgba(29, 205, 159, 0.1); /* Lighter background when dragging */
-  border-color: var(--color-secondary-accent);
+  background-color: rgba(19, 99, 223, 0.1); /* Lighter background when dragging */
+  border-color: var(--color-lighter-blue);
 }
 
 .file-input-label {
   font-size: 1.2em;
-  color: var(--color-light-grey);
+  color: var(--color-lightest-blue);
   cursor: pointer;
 }
 
@@ -109,15 +107,15 @@ input[type="file"] {
 }
 
 .filter-container input[type="text"] {
-  border: 2px solid var(--color-primary-accent); 
+  border: 2px solid var(--color-medium-blue); 
   padding: 18px; /* More padding */
   border-radius: 8px; /* Larger border-radius */
   width: calc(100% - 36px); /* Adjust width for padding */
   max-width: 450px; /* Wider input fields */
   /* box-sizing: border-box; already handled by universal selector */
   font-size: 1.2em; /* Larger font size */
-  background-color: var(--color-black); 
-  color: var(--color-white);
+  background-color: var(--color-darkest-blue); 
+  color: var(--color-lightest-blue);
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -129,8 +127,8 @@ input[type="file"]:focus,
 }
 
 button {
-  background-color: var(--color-primary-accent); 
-  color: var(--color-black); 
+  background-color: var(--color-medium-blue); 
+  color: var(--color-lightest-blue); 
   padding: 18px 35px; /* More padding */
   border: none;
   border-radius: 8px; /* Larger border-radius */
@@ -143,7 +141,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background-color: var(--color-secondary-accent); 
+  background-color: var(--color-lighter-blue); 
   transform: translateY(-4px); /* More pronounced lift */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -163,36 +161,36 @@ button:disabled {
 }
 
 .button-container button:nth-child(2) { 
-  background-color: var(--color-dark-grey); 
-  color: var(--color-primary-accent);
-  border: 2px solid var(--color-primary-accent); /* Thicker border */
+  background-color: var(--color-darkest-blue); 
+  color: var(--color-medium-blue);
+  border: 2px solid var(--color-medium-blue); /* Thicker border */
 }
 
 .button-container button:nth-child(2):hover:not(:disabled) {
-  background-color: var(--color-black);
-  color: var(--color-secondary-accent);
-  border-color: var(--color-secondary-accent);
+  background-color: var(--color-darkest-blue);
+  color: var(--color-lighter-blue);
+  border-color: var(--color-lighter-blue);
 }
 
 .button-container button:nth-child(3) { 
-  background-color: #cc0000; 
-  color: var(--color-white);
+  background-color: #b30000; 
+  color: var(--color-lightest-blue);
 }
 
 .button-container button:nth-child(3):hover:not(:disabled) {
-  background-color: #990000;
+  background-color: #800000;
 }
 
 p {
   margin-top: 30px; /* More margin */
   font-size: 1.3em; /* Larger font size */
-  color: var(--color-primary-accent); 
+  color: var(--color-medium-blue); 
   font-weight: 600;
 }
 
 .json-output {
   text-align: left;
-  background-color: var(--color-black); 
+  background-color: var(--color-darkest-blue); 
   padding: 35px; /* More padding */
   border-radius: 10px; 
   overflow-x: auto;
@@ -202,7 +200,7 @@ p {
 }
 
 .json-output h2 {
-  color: var(--color-primary-accent);
+  color: var(--color-medium-blue);
   margin-top: 0;
   margin-bottom: 25px; 
   font-size: 2.2em; /* Larger font size */
@@ -215,7 +213,7 @@ p {
   font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1.1em; /* Larger font size */
   line-height: 1.7;
-  color: var(--color-light-grey); 
+  color: var(--color-lightest-blue); 
 }
 
 /* Responsive adjustments */
