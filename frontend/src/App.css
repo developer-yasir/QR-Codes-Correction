@@ -1,0 +1,293 @@
+/* frontend/src/App.css */
+
+:root {
+  --color-black: #000000;
+  --color-dark-grey: #222222;
+  --color-primary-accent: #1DCD9F;
+  --color-secondary-accent: #169976;
+  --color-light-grey: #f0f0f0;
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0; 
+  background-color: var(--color-dark-grey); 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top, content will scroll */
+  min-height: 100vh;
+  color: var(--color-light-grey);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  background-color: var(--color-black); 
+  padding: 60px 40px; /* More vertical padding */
+  border-radius: 0; 
+  box-shadow: none; 
+  width: 100%; 
+  max-width: 100%; 
+  min-height: 100vh; 
+  text-align: center;
+  margin: 0; 
+  border: none; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; 
+}
+
+h1 {
+  color: var(--color-primary-accent); 
+  margin-bottom: 50px; /* More space below heading */
+  font-size: 3.5em; /* Even larger heading */
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.form-container,
+.button-container,
+.json-output,
+.filter-container {
+  margin-bottom: 40px; /* More space between sections */
+  padding: 30px; /* More padding */
+  border-radius: 10px; /* Slightly larger border-radius */
+  background-color: var(--color-dark-grey); 
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.4); /* Deeper inset shadow */
+  width: 100%; /* Ensure sections take full width of container */
+  max-width: 700px; /* Wider internal sections */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* More gap */
+  align-items: center;
+}
+
+.drop-zone {
+  border: 2px dashed var(--color-primary-accent); /* Dashed border for drop zone */
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  width: calc(100% - 60px); /* Adjust for padding */
+  max-width: 450px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  margin: 0 auto; /* Center the drop zone horizontally */
+}
+
+.drop-zone.dragging {
+  background-color: rgba(29, 205, 159, 0.1); /* Lighter background when dragging */
+  border-color: var(--color-secondary-accent);
+}
+
+.file-input-label {
+  font-size: 1.2em;
+  color: var(--color-light-grey);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  /* Hidden by default, handled by label */
+  display: none;
+}
+
+.filter-container input[type="text"] {
+  border: 2px solid var(--color-primary-accent); 
+  padding: 18px; /* More padding */
+  border-radius: 8px; /* Larger border-radius */
+  width: calc(100% - 36px); /* Adjust width for padding */
+  max-width: 450px; /* Wider input fields */
+  box-sizing: border-box;
+  font-size: 1.2em; /* Larger font size */
+  background-color: var(--color-black); 
+  color: var(--color-white);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="file"]:focus,
+.filter-container input[type="text"]:focus {
+  border-color: var(--color-secondary-accent);
+  box-shadow: 0 0 0 3px rgba(29, 205, 159, 0.3); /* Focus glow */
+}
+
+button {
+  background-color: var(--color-primary-accent); 
+  color: var(--color-black); 
+  padding: 18px 35px; /* More padding */
+  border: none;
+  border-radius: 8px; /* Larger border-radius */
+  cursor: pointer;
+  font-size: 1.3em; /* Larger font size */
+  font-weight: 700;
+  margin: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-secondary-accent); 
+  transform: translateY(-4px); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+button:disabled {
+  background-color: #555555; 
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* More gap */
+}
+
+.button-container button:nth-child(2) { 
+  background-color: var(--color-dark-grey); 
+  color: var(--color-primary-accent);
+  border: 2px solid var(--color-primary-accent); /* Thicker border */
+}
+
+.button-container button:nth-child(2):hover:not(:disabled) {
+  background-color: var(--color-black);
+  color: var(--color-secondary-accent);
+  border-color: var(--color-secondary-accent);
+}
+
+.button-container button:nth-child(3) { 
+  background-color: #cc0000; 
+  color: var(--color-white);
+}
+
+.button-container button:nth-child(3):hover:not(:disabled) {
+  background-color: #990000;
+}
+
+p {
+  margin-top: 30px; /* More margin */
+  font-size: 1.3em; /* Larger font size */
+  color: var(--color-primary-accent); 
+  font-weight: 600;
+}
+
+.json-output {
+  text-align: left;
+  background-color: var(--color-black); 
+  padding: 35px; /* More padding */
+  border-radius: 10px; 
+  overflow-x: auto;
+  margin-top: 40px; /* More margin */
+  border: 1px solid var(--color-dark-grey);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+.json-output h2 {
+  color: var(--color-primary-accent);
+  margin-top: 0;
+  margin-bottom: 25px; 
+  font-size: 2.2em; /* Larger font size */
+  font-weight: 700;
+}
+
+.json-output pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.1em; /* Larger font size */
+  line-height: 1.7;
+  color: var(--color-light-grey); 
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 30px;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .form-container,
+  .button-container,
+  .json-output,
+  .filter-container {
+    max-width: 650px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+  }
+  .form-container,
+  .button-container,
+  .filter-container {
+    gap: 20px;
+    padding: 25px;
+  }
+  input[type="file"],
+  .filter-container input[type="text"] {
+    padding: 15px;
+    font-size: 1.1em;
+  }
+  .json-output {
+    padding: 25px;
+  }
+  .json-output h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  button {
+    width: 100%; /* Buttons take full width on very small screens */
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+  .form-container,
+  .button-container,
+  .filter-container {
+    gap: 15px;
+    padding: 20px;
+  }
+  input[type="file"],
+  .filter-container input[type="text"] {
+    padding: 12px;
+    font-size: 1em;
+  }
+  .json-output {
+    padding: 15px;
+  }
+  .json-output h2 {
+    font-size: 1.8em;
+  }
+}
