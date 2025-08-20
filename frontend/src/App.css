@@ -2,9 +2,9 @@
 
 :root {
   --color-primary-dark: #2C3E50;
-  --color-secondary-blue: #3498DB;
-  --color-accent-green: #2ECC71;
-  --color-neutral-light: #ECF0F1;
+  --color-secondary-turquoise: #1ABC9C;
+  --color-accent-orange: #E67E22;
+  --color-neutral-light: #F5F5F5;
 }
 
 /* Universal box-sizing for easier layout management */
@@ -44,7 +44,7 @@ body {
 }
 
 h1 {
-  color: var(--color-secondary-blue); 
+  color: var(--color-secondary-turquoise); 
   margin-bottom: 50px; /* More space below heading */
   font-size: 3.5em; /* Even larger heading */
   font-weight: 700;
@@ -74,7 +74,7 @@ h1 {
 }
 
 .drop-zone {
-  border: 2px dashed var(--color-secondary-blue); /* Dashed border for drop zone */
+  border: 2px dashed var(--color-secondary-turquoise); /* Dashed border for drop zone */
   border-radius: 8px;
   padding: 30px;
   text-align: center;
@@ -91,8 +91,8 @@ h1 {
 }
 
 .drop-zone.dragging {
-  background-color: rgba(52, 152, 219, 0.1); /* Lighter background when dragging */
-  border-color: var(--color-accent-green);
+  background-color: rgba(26, 188, 156, 0.1); /* Lighter background when dragging */
+  border-color: var(--color-accent-orange);
 }
 
 .file-input-label {
@@ -107,7 +107,7 @@ input[type="file"] {
 }
 
 .filter-container input[type="text"] {
-  border: 2px solid var(--color-secondary-blue); 
+  border: 2px solid var(--color-secondary-turquoise); 
   padding: 18px; /* More padding */
   border-radius: 8px; /* Larger border-radius */
   width: calc(100% - 36px); /* Adjust width for padding */
@@ -127,7 +127,7 @@ input[type="file"]:focus,
 }
 
 button {
-  background-color: var(--color-secondary-blue); 
+  background-color: var(--color-secondary-turquoise); 
   color: var(--color-neutral-light); 
   padding: 18px 35px; /* More padding */
   border: none;
@@ -141,7 +141,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background-color: var(--color-accent-green); 
+  background-color: var(--color-accent-orange); 
   transform: translateY(-4px); /* More pronounced lift */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -162,14 +162,14 @@ button:disabled {
 
 .button-container button:nth-child(2) { 
   background-color: var(--color-primary-dark); 
-  color: var(--color-secondary-blue);
-  border: 2px solid var(--color-secondary-blue); /* Thicker border */
+  color: var(--color-secondary-turquoise);
+  border: 2px solid var(--color-secondary-turquoise); /* Thicker border */
 }
 
 .button-container button:nth-child(2):hover:not(:disabled) {
   background-color: var(--color-primary-dark);
-  color: var(--color-accent-green);
-  border-color: var(--color-accent-green);
+  color: var(--color-accent-orange);
+  border-color: var(--color-accent-orange);
 }
 
 .button-container button:nth-child(3) { 
@@ -184,7 +184,7 @@ button:disabled {
 p {
   margin-top: 30px; /* More margin */
   font-size: 1.3em; /* Larger font size */
-  color: var(--color-secondary-blue); 
+  color: var(--color-secondary-turquoise); 
   font-weight: 600;
 }
 
@@ -200,7 +200,7 @@ p {
 }
 
 .json-output h2 {
-  color: var(--color-secondary-blue);
+  color: var(--color-secondary-turquoise);
   margin-top: 0;
   margin-bottom: 25px; 
   font-size: 2.2em; /* Larger font size */
