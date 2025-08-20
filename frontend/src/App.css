@@ -9,6 +9,11 @@
   --color-white: #ffffff;
 }
 
+/* Universal box-sizing for easier layout management */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
@@ -60,7 +65,7 @@ h1 {
   box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.4); /* Deeper inset shadow */
   width: 100%; /* Ensure sections take full width of container */
   max-width: 700px; /* Wider internal sections */
-  box-sizing: border-box; /* Include padding in width */
+  /* box-sizing: border-box; already handled by universal selector */
 }
 
 .form-container {
@@ -79,7 +84,7 @@ h1 {
   transition: background-color 0.3s ease, border-color 0.3s ease;
   width: calc(100% - 60px); /* Adjust for padding */
   max-width: 450px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; already handled by universal selector */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +114,7 @@ input[type="file"] {
   border-radius: 8px; /* Larger border-radius */
   width: calc(100% - 36px); /* Adjust width for padding */
   max-width: 450px; /* Wider input fields */
-  box-sizing: border-box;
+  /* box-sizing: border-box; already handled by universal selector */
   font-size: 1.2em; /* Larger font size */
   background-color: var(--color-black); 
   color: var(--color-white);
