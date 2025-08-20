@@ -78,7 +78,7 @@ function App() {
     setFilterAcPlant(''); // Clear filter on new upload
 
     try {
-      const res = await axios.post('/api/upload', formData, {
+      const res = await axios.post('http://localhost:5000/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -94,7 +94,7 @@ function App() {
 
   const handleCheckQrCodes = async () => {
     try {
-      const res = await axios.get('/api/qrcodes');
+      const res = await axios.get('http://localhost:5000/api/qrcodes');
       setOriginalQrCodes(res.data); // Store original data
       setProcessedJson(JSON.stringify(res.data, null, 2));
       setMessage('QR Codes fetched successfully.');
