@@ -34,5 +34,8 @@ This project is a MERN stack application that allows you to scan and correct QR 
 
 ## Usage
 
-1.  Open your browser and navigate to `http://localhost:5173/`
-2.  Upload a QR code image to scan and correct it.
+1.  **Start the application:** Make sure both the frontend and backend servers are running by following the instructions in the "Running the application" section.
+2.  **Open the application:** Open your web browser and navigate to `http://localhost:5173/`.
+3.  **Upload a QR code:** Click on the "Upload QR Code" button and select an image file of a QR code from your computer.
+4.  **Scan and correct:** The application will automatically scan the QR code and display the decoded information. If the QR code is damaged or difficult to read, the application will attempt to correct it and display the corrected information.
+5.  **View the results:** The original and corrected QR code data will be displayed on the screen, allowing you to compare the results.
